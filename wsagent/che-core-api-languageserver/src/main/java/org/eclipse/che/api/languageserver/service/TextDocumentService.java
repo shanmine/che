@@ -483,7 +483,7 @@ public class TextDocumentService {
 
             @Override
             public boolean handleResult(InitializedLanguageServer element, Hover hover) {
-              if (hover != null) {
+              if (hover != null && hover.getContents() != null) {
                 HoverDto hoverDto = new HoverDto(hover);
                 result.getContents().addAll(hoverDto.getContents());
               }
